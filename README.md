@@ -47,6 +47,18 @@ O projeto demonstra conceitos fundamentais de parsing, execução de processos, 
 
 🔹 Loop REPL
 
+# ⚙️ Chamadas ao sistema utilizadas
+
+| Função                            | Finalidade                                                      |
+| --------------------------------- | --------------------------------------------------------------- |
+| **read()**                        | Lê bytes diretamente da entrada padrão (stdin).                 |
+| **write()**                       | Escreve bytes diretamente na saída/erro padrão.                 |
+| **subprocess.Popen()**            | Cria um processo filho (equivalente a fork + exec).             |
+| **proc.wait()**                   | Processo pai aguarda o término do filho (equivalente a wait()). |
+| **locale.getpreferredencoding()** | Lida com encoding adequado do sistema.                          |
+| **str.split()**                   | Parsing simples do comando em tokens/argumentos.                |
+
+
 # ⏯️ Como Executar
 
 1. Clone o repositório
@@ -81,6 +93,17 @@ Directory of C:\Users\...
 > Disparando google.com [172.217.29.206] com 32 bytes de dados...
 
 > não é reconhecido como um comando interno ou externo, um programa operável ou um arquivo em lotes.
+
+
+# ⚠️ Limitações conhecidas
+
+- Não há suporte a pipes (|), redirecionamentos (>, <) ou comandos compostos (&&, ||).
+
+- Parsing é muito simples — não trata aspas, strings com espaços, ou escape characters.
+
+- O tratamento de erros ainda é básico
+
+- Não há histórico de comandos
 
 # Pessoas Desenvolvedoras
 
